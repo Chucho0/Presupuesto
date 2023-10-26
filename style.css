@@ -14,3 +14,68 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+h1 {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.contenedorpadre {
+    margin-top: 20px;
+    width: 20%;
+}
+
+.contenedorentrada {
+    margin-top: 20px;
+    background-color: rgba(150, 141, 141, 0.5);
+    border-radius: 2px;
+    padding: 3px;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.alertas {
+    margin-top: 10px;
+}
+
+.primeraentrada {
+    margin-top: 10px;
+}
+
+.segundaentrada {
+    margin-top: 10px;
+}
+
+h5 {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 5px;
+}
+
+.contenedorsalidad {
+    margin-top: 20px;
+    background-color: rgba(150, 141, 141, 0.5);
+    border-radius: 2px;
+    padding: 3px;
+}
+
+.cartas {
+    margin-top: 10px;
+}
+
+.informacion {
+    margin-top: 10px;
+}
+
+h4 {
+    margin-top: 5px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace
+}
