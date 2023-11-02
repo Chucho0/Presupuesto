@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto Mensual</title>
     <link rel="stylesheet" href="style.css">
@@ -12,8 +13,13 @@
     <div class="presupuestomensual">
         <h1 class="gasto"><b>Gastos Mensuales</b></h1>
         <div class="contenedorpadre">
+            <div class="alerta-presupuesto" style="display: none;">
+                <p><b>Ingrese su presupuesto mensual:</b></p>
+                <input class="presumensual" type="number" id="presupuesto-input" />
+                <button onclick="establecerPresupuesto()">Establecer Presupuesto</button>
+            </div>
             <div class="contenedorentrada">
-                <h3>Inserta tus gastos aqui</h3>
+                <h3>Inserta tus gastos aquí</h3>
                 <div class="alertas">
                     <div class="primeraalerta">
 
@@ -30,15 +36,11 @@
                     <h5>Cantidad</h5>
                     <input class="cajas" type="number" placeholder="Cantidad en $" id="cantidad" />
                 </div>
-                <button class="agregar" onclick=""><b>Agregar</b></button>
+                <button class="agregar" onclick="agregarGasto()"><b>Agregar</b></button>
             </div>
             <div class="contenedorsalidad">
                 <h3>Listado</h3>
-                <div class="cartas">
-                    <p class="gastos"><b></b></p>
-                    <p class="cantidad">$</p>
-                    <button type="button" class="borrar" onclick="">Borrar</button>
-                </div>                
+                <div id="listado"></div>
                 <div class="informacion">
                     <div>
                         <h4 class="presupuesto"><b>Presupuesto: $</b></h4>
@@ -50,7 +52,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
