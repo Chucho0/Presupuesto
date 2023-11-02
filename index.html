@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head
-    <meta charset="UTF-8">
+<head <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto Mensual</title>
     <link rel="stylesheet" href="style.css">
@@ -31,19 +30,21 @@
                     <h5>Cantidad</h5>
                     <input class="cajas" type="number" placeholder="Cantidad en $" id="cantidad" />
                 </div>
-                <button onclick=""><b>Agregar</b></button>
+                <button class="agregar" onclick=""><b>Agregar</b></button>
             </div>
             <div class="contenedorsalidad">
                 <h3>Listado</h3>
                 <div class="cartas">
-
-                </div>
+                    <p class="gastos"><b></b></p>
+                    <p class="cantidad">$</p>
+                    <button type="button" class="borrar" onclick="">Borrar</button>
+                </div>                
                 <div class="informacion">
                     <div>
-                        <h4><b>Presupuesto: $</b></h4>
+                        <h4 class="presupuesto"><b>Presupuesto: $</b></h4>
                     </div>
                     <div>
-                        <h4><b>Restante: $</b></h4>
+                        <h4 class="restante"><b>Restante: $</b></h4>
                     </div>
                 </div>
             </div>
