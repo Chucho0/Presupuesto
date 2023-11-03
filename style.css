@@ -12,6 +12,11 @@ p {
     font-size: 25px;
 }
 
+.cajas::placeholder {
+    font-size: 15px; 
+}
+
+
 .presumensual {
     width: 100%;
 }
@@ -201,6 +206,10 @@ h4 {
     p {
         font-size: 19px;
     }
+
+    .cajas::placeholder {
+        font-size: 13px; 
+    }
 }
 
 @media (max-width: 400px) {
@@ -236,6 +245,10 @@ h4 {
 
     p {
         font-size: 13px;
+    }
+
+    .cajas::placeholder {
+        font-size: 10px; 
     }
 
 }
