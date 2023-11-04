@@ -1,5 +1,6 @@
 let presupuesto = 0;
 let gastos = 0;
+const moneda = "COP";
 
 document.addEventListener("DOMContentLoaded", function () {
     mostrarAlertaPresupuesto();
@@ -19,7 +20,7 @@ function establecerPresupuesto() {
 
     document.querySelector('.alerta-presupuesto').style.display = 'none';
 
-    document.querySelector(".presupuesto").innerText = `Presupuesto: $${presupuesto.toFixed(2)}`;
+    document.querySelector(".presupuesto").innerText = `Presupuesto: ${formatoMoneda(presupuesto)}`;
     actualizarRestante();
 }
 
@@ -37,7 +38,7 @@ function agregarGasto() {
 
     nuevaCarta.innerHTML = `
         <p class="gastos"><b>${nombreGasto}</b></p>
-        <p class="cantidad">$${cantidadGasto.toFixed(2)}</p>
+        <p class="cantidad" data-cantidad="${cantidadGasto}">${formatoMoneda(cantidadGasto)}</p>
         <button type="button" class="borrar" onclick="borrarGasto(this)">Borrar</button>
     `;
 
@@ -53,7 +54,7 @@ function agregarGasto() {
 }
 
 function borrarGasto(elemento) {
-    const cantidadGastoBorrado = parseFloat(elemento.previousElementSibling.innerText.slice(1)) || 0;
+    const cantidadGastoBorrado = parseFloat(elemento.parentNode.querySelector('.cantidad').dataset.cantidad) || 0;
     gastos -= cantidadGastoBorrado;
     elemento.parentNode.remove();
     actualizarRestante();
@@ -62,11 +63,15 @@ function borrarGasto(elemento) {
 function actualizarRestante() {
     const restante = presupuesto - gastos;
 
-    document.querySelector(".restante").innerText = `Restante: $${restante.toFixed(2)}`;
+    document.querySelector(".restante").innerText = `Restante: ${formatoMoneda(restante)}`;
 
     if (restante < 0) {
         mostrarAlerta("Has superado tu presupuesto.", "segundaalerta");
     }
+}
+
+function formatoMoneda(valor) {
+    return new Intl.NumberFormat('es-CO', { style: 'currency', currency: moneda }).format(valor);
 }
 
 function mostrarAlerta(mensaje, claseAlerta) {

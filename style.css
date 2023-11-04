@@ -13,7 +13,7 @@ p {
 }
 
 .cajas::placeholder {
-    font-size: 15px; 
+    font-size: 15px;
 }
 
 
@@ -208,7 +208,7 @@ h4 {
     }
 
     .cajas::placeholder {
-        font-size: 13px; 
+        font-size: 13px;
     }
 }
 
@@ -248,7 +248,7 @@ h4 {
     }
 
     .cajas::placeholder {
-        font-size: 10px; 
+        font-size: 10px;
     }
 
 }
