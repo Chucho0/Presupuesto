@@ -5,10 +5,27 @@ let presupuestoSuperado = false;
 
 document.addEventListener("DOMContentLoaded", function () {
     mostrarAlertaPresupuesto();
+
+    document.getElementById('presupuesto-input').addEventListener('keyup', function (event) {
+        if (event.key === 'Enter') {
+            establecerPresupuesto();
+        }
+    });
+
+    document.getElementById('cantidad').addEventListener('keyup', function (event) {
+        if (event.key === 'Enter') {
+            agregarGasto();
+        }
+    });
 });
 
 function mostrarAlertaPresupuesto() {
     document.querySelector('.alerta-presupuesto').style.display = 'block';
+}
+
+function ocultarAlerta(claseAlerta) {
+    const alertaElement = document.querySelector(`.${claseAlerta}`);
+    alertaElement.style.display = 'none';
 }
 
 function establecerPresupuesto() {
@@ -28,6 +45,7 @@ function establecerPresupuesto() {
 function agregarGasto() {
     if (presupuestoSuperado) {
         mostrarAlerta("Has superado tu presupuesto. No puedes agregar más gastos.", "segundaalerta");
+        ocultarAlerta("primeraalerta");
         return;
     }
 
@@ -41,7 +59,7 @@ function agregarGasto() {
 
     if (gastos + cantidadGasto > presupuesto) {
         mostrarAlerta("Has superado tu presupuesto. No puedes agregar más gastos.", "segundaalerta");
-        mostrarAlerta("Incorrecto", "primeraalerta");
+        ocultarAlerta("primeraalerta");
         return;
     }
 
@@ -81,7 +99,7 @@ function actualizarRestante() {
     if (restante < 0) {
         presupuestoSuperado = true;
         mostrarAlerta("Has superado tu presupuesto. No puedes agregar más gastos.", "segundaalerta");
-        mostrarAlerta("Incorrecto", "primeraalerta");
+        ocultarAlerta("primeraalerta");
     }
 }
 

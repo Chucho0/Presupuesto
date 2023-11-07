@@ -12,6 +12,10 @@ p {
     font-size: 30px;
 }
 
+.primeraalerta, .segundaalerta {
+    display: none;
+}
+
 .cajas::placeholder {
     font-size: 20px;
 }
