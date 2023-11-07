@@ -1,6 +1,7 @@
 let presupuesto = 0;
 let gastos = 0;
 const moneda = "COP";
+let presupuestoSuperado = false;
 
 document.addEventListener("DOMContentLoaded", function () {
     mostrarAlertaPresupuesto();
@@ -25,11 +26,23 @@ function establecerPresupuesto() {
 }
 
 function agregarGasto() {
+    if (presupuestoSuperado) {
+        mostrarAlerta("Has superado tu presupuesto. No puedes agregar más gastos.", "segundaalerta");
+        return;
+    }
+
     const nombreGasto = document.getElementById("gasto").value;
     const cantidadGasto = parseFloat(document.getElementById("cantidad").value) || 0;
 
     if (!nombreGasto || cantidadGasto <= 0) {
         mostrarAlerta("Por favor, ingresa un nombre y una cantidad válida para el gasto.", "primeraalerta");
+        return;
+    }
+
+    if (gastos + cantidadGasto > presupuesto) {
+        presupuestoSuperado = true;
+        mostrarAlerta("Has superado tu presupuesto. No puedes agregar más gastos.", "segundaalerta");
+        mostrarAlerta("Incorrecto", "primeraalerta");
         return;
     }
 
@@ -58,6 +71,7 @@ function borrarGasto(elemento) {
     gastos -= cantidadGastoBorrado;
     elemento.parentNode.remove();
     actualizarRestante();
+    presupuestoSuperado = false;
 }
 
 function actualizarRestante() {
@@ -66,7 +80,9 @@ function actualizarRestante() {
     document.querySelector(".restante").innerText = `Restante: ${formatoMoneda(restante)}`;
 
     if (restante < 0) {
-        mostrarAlerta("Has superado tu presupuesto.", "segundaalerta");
+        presupuestoSuperado = true;
+        mostrarAlerta("Has superado tu presupuesto. No puedes agregar más gastos.", "segundaalerta");
+        mostrarAlerta("Incorrecto", "primeraalerta");
     }
 }
 
@@ -75,6 +91,12 @@ function formatoMoneda(valor) {
 }
 
 function mostrarAlerta(mensaje, claseAlerta) {
-    document.querySelector(`.${claseAlerta}`).innerText = "";
-    document.querySelector(`.${claseAlerta}`).innerText = mensaje;
+    const alertaElement = document.querySelector(`.${claseAlerta}`);
+    alertaElement.innerText = mensaje;
+
+    alertaElement.style.display = 'block';
+
+    setTimeout(() => {
+        alertaElement.style.display = 'none';
+    }, 5000);
 }

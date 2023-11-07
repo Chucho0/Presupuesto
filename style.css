@@ -9,27 +9,24 @@ body {
 }
 
 p {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .cajas::placeholder {
-    font-size: 15px;
+    font-size: 20px;
 }
-
 
 .presumensual {
     width: 100%;
+    font-size: 24px;
+    border-radius: 2px;
 }
 
 .alerta-presupuesto {
     margin-top: 20px;
     background-color: rgba(150, 141, 141, 0.5);
-    border-radius: 2px;
-    padding: 3px;
-}
-
-.presumensual {
-    border-radius: 0.5px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .presupuestomensual {
@@ -41,23 +38,23 @@ p {
 
 h1 {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 .contenedorpadre {
     margin-top: 20px;
-    width: 30%;
+    width: 70%;
 }
 
 .contenedorentrada {
     margin-top: 20px;
     background-color: rgba(150, 141, 141, 0.5);
-    border-radius: 2px;
-    padding: 3px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -73,21 +70,22 @@ h3 {
     text-align: center;
     margin: 5px;
     background-color: rgb(150, 211, 173);
-    border-radius: 2px;
-    padding: 2px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .segundaalerta {
     text-align: center;
     margin: 5px;
     background-color: rgb(218, 141, 141);
-    border-radius: 2px;
-    padding: 2px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .cajas {
     width: 100%;
-    border-radius: 0.5px;
+    border-radius: 2px;
+    font-size: 24px;
 }
 
 .segundaentrada {
@@ -100,29 +98,29 @@ h3 {
 
 .cantidad {
     background-color: rgb(106, 166, 206);
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 2px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 h5 {
-    font-size: 20px;
+    font-size: 25px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 button {
     margin-top: 5px;
-    border-radius: 0.5px;
+    border-radius: 2px;
     background-color: rgb(106, 166, 206);
-    font-size: 17px;
+    font-size: 22px;
 }
 
 .contenedorsalidad {
     margin-top: 20px;
     background-color: rgba(150, 141, 141, 0.5);
-    border-radius: 2px;
-    padding: 3px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .cartas {
@@ -131,8 +129,8 @@ button {
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    border: 1px;
-    border-radius: 3px;
+    border: 2px solid black;
+    border-radius: 5px;
     background-color: rgba(150, 141, 141, 0.5);
 }
 
@@ -142,57 +140,87 @@ button {
 
 .presupuesto {
     background-color: rgb(106, 166, 206);
-    border-radius: 2px;
-    padding: 2px;
-    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
 }
 
 .restante {
     background-color: rgb(218, 141, 141);
-    border-radius: 2px;
-    padding: 2px;
-    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
 }
 
 h4 {
     margin-top: 5px;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'Courier New', Courier, monospace
 }
 
 @media (max-width: 1400px) {
     .contenedorpadre {
-        width: 40%;
+        width: 80%;
     }
 }
 
 @media (max-width: 1000px) {
     .contenedorpadre {
-        width: 50%;
+        width: 90%;
     }
 }
 
 @media (max-width: 800px) {
     .contenedorpadre {
-        width: 60%;
+        width: 95%;
     }
 }
 
 @media (max-width: 600px) {
     .contenedorpadre {
-        width: 80%;
+        width: 100%;
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 40px;
     }
 
     h3 {
-        font-size: 22px;
+        font-size: 32px;
     }
 
     h5 {
-        font-size: 15px;
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 29px;
+    }
+}
+
+@media (max-width: 430px) {
+    .contenedorpadre {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 12px;
     }
 
     button {
@@ -204,27 +232,13 @@ h4 {
     }
 
     p {
-        font-size: 19px;
-    }
-
-    .cajas::placeholder {
-        font-size: 13px;
+        font-size: 20px;
     }
 }
 
-@media (max-width: 400px) {
-    .contenedorpadre {
-        width: 90%;
-    }
-}
-
-@media (max-width: 300px) {
-    .contenedorpadre {
-        width: 97%;
-    }
-
+@media (max-width: 240px) {
     h1 {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     h3 {
@@ -232,23 +246,18 @@ h4 {
     }
 
     h5 {
-        font-size: 13px;
+        font-size: 10px;
     }
 
     button {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     h4 {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     p {
-        font-size: 13px;
+        font-size: 15px;
     }
-
-    .cajas::placeholder {
-        font-size: 10px;
-    }
-
 }
