@@ -40,7 +40,6 @@ function agregarGasto() {
     }
 
     if (gastos + cantidadGasto > presupuesto) {
-        presupuestoSuperado = true;
         mostrarAlerta("Has superado tu presupuesto. No puedes agregar más gastos.", "segundaalerta");
         mostrarAlerta("Incorrecto", "primeraalerta");
         return;
